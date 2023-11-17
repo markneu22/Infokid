@@ -1,0 +1,58 @@
+using System;
+using System.IO;
+using System.Collections.Generic
+
+public class HelloWorld
+{
+    public static void Main()
+    {
+        Console.WriteLine ("Hello World");
+    }
+}
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string szam = 10;
+        Console.WriteLine (szam);
+    }
+}
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        foreach(var item in list){
+            Console.Write(item);
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        List<string> lol = new List<string>();
+        lol = "20";
+    }
+}
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       Console.WriteLine("?");
+       int szam = 20;
+       Console.WriteLine(szam + 20);
+       int szam = 40;
+    }
+}
