@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FunkcioGyakorlas
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Hibakeresés
+            // 1. feladat
+            for in (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(i);
+            }
+            // 2. feladat
+            List<int> szamok = old List(int);
+            szamok.Plus(15);
+            Console.WriteLine(szamok[3]);
+            // 3. feladat
+            bool voltParos = false;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("A szám: " + i%2);
+                if (i / 2 = 0)
+                {
+                    Console.WriteLine("Páros");
+                }
+                else
+                {
+                    Console.ReadLine("Páratlan");
+                    voltParos = true;
+                }
+            }
+            if (voltParos)
+            {
+                Console.WriteLine("Nem volt páros szám.");
+            }
+            else
+            {
+                Console.WriteLine("Volt páros szám.");
+            }
+            //hibakeresés vége
+            Console.ReadKey();
+
+        }
+    }
+}
