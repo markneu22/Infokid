@@ -1,0 +1,39 @@
+List<int> szamok = new List<int>();
+            szamok.Add(15);
+            Console.WriteLine(szamok[0]);
+            List<string> lista = new List<string> { "alma","sajt","józsef","mókus","róka"};
+            int élet = 10;
+            Random a = new Random();
+            string sorsoltSzó = lista[a.Next(0, lista.Count)];
+            string[] tippTömb = new string[sorsoltSzó.Length];
+            for (int i = 0; i < sorsoltSzó.Length; i++)
+            {
+                Console.Write("_" + " ");
+            }
+            while (!(élet == 0)) // igaz!
+            {
+                char tipp = char.Parse(Console.ReadLine());
+                if (sorsoltSzó.Contains(tipp))
+                {
+                    Console.Clear();
+                    for (int i = 0; i < sorsoltSzó.Length; i++)
+                    {
+                        if (sorsoltSzó[i] == tipp)
+                        {
+                            tippTömb[i] = tipp.ToString();
+                        }
+                    }
+                }
+                for (int i = 0; i < tippTömb.Length; i++)
+                {
+                    if (tippTömb[i] == null)
+                    {
+                        Console.Write("_" + " ");
+                    }
+                    else
+                    {
+                        Console.Write(tippTömb[i] + " ");
+                    }
+                }
+                
+            }
