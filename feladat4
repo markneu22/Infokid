@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _20231130_Funkciók
+{
+    class Program
+    {
+        // Órai anyag: Van-e benne ismétlődés?
+        static bool Duplicate(List<string> lista)
+        {
+            bool ret = false;
+            return ret;
+        }
+        // hibakeresés
+        //static void WriteName(string nemSzükséges;)
+        //{
+        //    string hello= "hello";
+        //    Console.WriteLineeee(hello);
+        //    return hiba;
+        //}
+        static void Main(string[] args)
+        {
+            //WriteName();
+            List<string> lista = new List<string>();
+            Program.Duplicate(lista);
+        }
+
+    }
+}
