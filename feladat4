@@ -1,32 +1,40 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+extends KinematicBody2D
 
-namespace _20231130_Funkciók
-{
-    class Program
-    {
-        // Órai anyag: Van-e benne ismétlődés?
-        static bool Duplicate(List<string> lista)
-        {
-            bool ret = false;
-            return ret;
-        }
-        // hibakeresés
-        //static void WriteName(string nemSzükséges;)
-        //{
-        //    string hello= "hello";
-        //    Console.WriteLineeee(hello);
-        //    return hiba;
-        //}
-        static void Main(string[] args)
-        {
-            //WriteName();
-            List<string> lista = new List<string>();
-            Program.Duplicate(lista);
-        }
 
-    }
-}
+var speed = 200 
+var jump_power = -500  
+var velocity = Vector2()
+var jumpNumb = 2
+
+func _ready():
+	add_to_group("Player")
+
+func _process(delta):
+	var input_direction = Vector2()
+	if Input.is_key_pressed(KEY_D):
+		input_direction.x += 1
+	if Input.is_key_pressed(KEY_A):
+		input_direction.x -= 1
+	 #Normalized means that it cannot go faster diagonally
+	input_direction = input_direction.normalized()
+
+	velocity.x = input_direction.x * speed
+
+	velocity.y += 700 * delta   # Adjust the gravity value as needed
+
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+	if Input.is_key_pressed(KEY_F):
+		queue_free()
+	if (is_on_floor() or is_on_wall()) and Input.is_key_pressed(KEY_W) and jumpNumb > 0:
+		velocity.y = jump_power
+		jumpNumb -= 1;
+	if(is_on_floor()):
+		jumpNumb = 2
+
+
+func _on_Spike_body_entered(body):
+	if(is_in_group("Player")):
+		queue_free()
+		#velocity = move_and_slide(Vector2(0,-1000),Vector2(0,-1))
+		#get_tree().change_scene("res://YouLose.tscn")
+
